@@ -1,5 +1,7 @@
 package com.test.szh.web;
 
+import com.test.szh.service.GenericTable;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,9 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/rest/v1/hello")
 @RestController
 public class HelloController {
+    @Autowired
+    private GenericTable genericTable;
 
     @GetMapping("")
     public String index(){
+        genericTable.createTable();
         return "hello!";
     }
 }
