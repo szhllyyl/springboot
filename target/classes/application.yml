@@ -3,3 +3,16 @@ server:
   servlet:
     context-path: /test
   max-http-header-size: 102400
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.2.139:3306/test2?useUnicode=true&characterEncoding=utf-8&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&serverTimezone=GMT%2b8
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: none
+      temp:
+        use_jdbc_metadata_defaults: false
